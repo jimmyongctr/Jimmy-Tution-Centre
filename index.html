@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Jimmy Tution Centre</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    nav {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul li {
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      padding: 5px 10px;
+    }
+
+    .banner {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .logo {
+      float: left;
+    }
+
+    .content {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .subpage {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <img src="https://filedn.com/lXdPRR7Cm4sS1CrBdrFaEkX/CAMROLL/Jimmy_Logo%20only.png" alt="Logo" width="100">
+      </div>
+      <h1>Jimmy Tution Centre</h1>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#other">Other</a></li>
+      </ul>
+    </nav>
+
+    <div class="banner">
+      <img src="https://filedn.com/lXdPRR7Cm4sS1CrBdrFaEkX/CAMROLL/banner%20hi%20tech.jpg" alt="Banner" width="800">
+    </div>
+
+    <div id="home" class="content">
+      <h2>Welcome to our Tuition Centre!</h2>
+      <p>We provide quality education and personalized tutoring services for students of all ages.</p>
+    </div>
+
+    <div id="about" class="content">
+      <h2>About Us</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla consequat neque magna, vitae finibus nunc eleifend non.</p>
+    </div>
+
+    <div id="contact" class="content">
+      <h2>Contact Us</h2>
+      <p>For any inquiries, please email us at <a href="mailto:info@tuitioncentre.com">info@tuitioncentre.com</a>.</p>
+    </div>
+
+    <div id="other" class="content">
+      <h2>Other Services</h2>
+      <p>We also offer additional services such as test preparation, subject-specific workshops, and more.</p>
+    </div>
+
+    <script>
+      // Function to show the selected subpage and hide others
+      function showSubpage(subpageId) {
+        var subpages = document.getElementsByClassName('subpage');
+        for (var i = 0; i < subpages.length; i++) {
+          subpages[i].style.display = 'none';
+        }
+        document.getElementById(subpageId).style.display = 'block';
+      }
+
+      // Add click event listener to navigation links
+      var navLinks = document.querySelectorAll('nav a');
+      for (var i = 0; i < navLinks.length; i++) {
+        navLinks[i].addEventListener('click', function(e) {
+          e.preventDefault();
+          showSubpage(this.getAttribute('href').substring(1));
+        });
+      }
+
+      // Show home subpage by default
+      showSubpage('home');
+    </script>
+  </div>
+</body>
+</html>
